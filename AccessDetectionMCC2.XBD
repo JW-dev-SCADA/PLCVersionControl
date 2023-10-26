@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBDExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V15.0-SP1 - 210706C" dateTime="date_and_time#2023-10-26-15:0:5" content="Derived Function Block source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.1" dateTime="date_and_time#2023-10-24-14:19:54"></contentHeader>
+	<program>
+		<identProgram name="AccessDetectionMCC2" type="section" task="MAST" SectionOrder="3"></identProgram>
+		<FBDSource nbRows="24" nbColumns="36">
+			<networkFBD>
+				<FFBBlock instanceName="MCC2Door_Tmr" typeName="TON" additionnalPinNumber="0" enEnO="false" width="6" height="6">
+					<objPosition posX="15" posY="38"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="bMCC2DoorClosed"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="PT" effectiveParameter="t#2s"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q" effectiveParameter="bMCC2Secure"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="ET"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".1" typeName="NOT" additionnalPinNumber="0" enEnO="false" width="6" height="5">
+					<objPosition posX="15" posY="26"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="ibMCC2DoorsClosed"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bMCC2DoorOpen"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".2" typeName="MOVE" additionnalPinNumber="0" enEnO="false" width="6" height="5">
+					<objPosition posX="15" posY="32"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="ibMCC2DoorsClosed"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bMCC2DoorClosed"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".3" typeName="MOVE" additionnalPinNumber="0" enEnO="false" width="6" height="5">
+					<objPosition posX="15" posY="49"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="ibMCC2AuthorisedOccupier"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bMCC2TxAlarmsDisabled"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".4" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="14" posY="56"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="ibMCC2AuthorisedOccupier"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2ExitErrorAlmEn"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bMCC2ScadaAlarmsEnabled"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".5" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="18" posY="74"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bMCC2Secure"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2SecureLatch"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".6" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="18" posY="81"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bMCC2IntruderLatch"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2TxAlarmsDisabled"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".7" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="29" posY="74"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bMCC2SecureLatch"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".8" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="11" posY="100"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="bMCC2Secure"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2SecureLatch"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".9" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="21" posY="107"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2IntruderLatch"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".10" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="29" posY="114"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="bMCC2TxAlarmsDisabled"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bMCC2IntruderLatch"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".11" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="17" posY="132"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="bMCC2EntryError"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2IntruderLatch"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".12" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="17" posY="140"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="bMCC2IntruderLatch"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2TxAlarmsDisabled"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC2Entry" typeName="RS" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="32" posY="135"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="S"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="R1"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q1" effectiveParameter="bMCC2Entry"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC2Entry_Tmr" typeName="TON" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="17" posY="148"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="bMCC2Entry"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="PT" effectiveParameter="t#30s"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q" effectiveParameter="bMCC2EntryError"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="ET"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".13" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="167"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="bMCC2ExitDone"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="bMCC2TxAlarmsDisabled"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC2Exit_Tmr" typeName="TON" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="176"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="bMCC2Exit"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="PT" effectiveParameter="t#30s"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q" effectiveParameter="bMCC2ExitDone"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="ET"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC2Exit" typeName="RS" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="33" posY="167"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="S"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="R1" effectiveParameter="bMCC2TxAlarmsDisabled"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q1" effectiveParameter="bMCC2Exit"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".14" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="17" posY="197"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bMCC2ExitDone"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2ExitFailLatch"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".16" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="33" posY="197"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bMCC2ExitFailLatch"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".15" typeName="OR" additionnalPinNumber="2" enEnO="false" width="7" height="8">
+					<objPosition posX="17" posY="208"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bMCC2TxAlarmsDisabled"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2Secure"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN3" effectiveParameter="bMCC2SecureLatch"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN4" effectiveParameter="bMCC2IntruderLatch"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".18" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="80" posY="14"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="bMCC2ExitErrorDone"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2Secure"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".17" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="80" posY="23"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="bMCC2Secure"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="bMCC2TxAlarmsDisabled"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".19" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="80" posY="40"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bMCC2TxAlarmsDisabled"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2Secure"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC2Exit_Err_Tmr" typeName="TON" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="80" posY="32"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="bMCC2ExitError"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="PT" effectiveParameter="t#30s"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q" effectiveParameter="bMCC2ExitErrorDone"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="ET"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC2ExitError" typeName="RS" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="100" posY="15"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="S"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="R1"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q1" effectiveParameter="bMCC2ExitError"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC2Alm_Auto_Tmr" typeName="TON" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="97" posY="40"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="PT" effectiveParameter="t#15m"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q" effectiveParameter="bMCC2ExitErrorAlmEn"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="ET"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".20" typeName="OR" additionnalPinNumber="1" enEnO="false" width="7" height="7">
+					<objPosition posX="77" posY="66"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bMCC2EntryError"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2ExitFailLatch"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN3" effectiveParameter="bMCC2ExitErrorDone"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bMCC2TxIntruderAlm"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".21" typeName="OR" additionnalPinNumber="1" enEnO="false" width="7" height="7">
+					<objPosition posX="77" posY="87"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bMCC2EntryError"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bMCC2ExitFailLatch"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN3" effectiveParameter="bMCC2ExitError"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obMCC2IntrAlm"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<linkFB>
+					<linkSource parentObjectName=".18" pinName="OUT">
+						<objPosition posX="86" posY="18"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName="MCC2ExitError" pinName="S">
+						<objPosition posX="100" posY="19"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="88" posY="18"></gridObjPosition>
+					<gridObjPosition posX="88" posY="19"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".5" pinName="OUT">
+						<objPosition posX="24" posY="78"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".7" pinName="IN1">
+						<objPosition posX="29" posY="78"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".15" pinName="OUT">
+						<objPosition posX="23" posY="212"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".16" pinName="IN2">
+						<objPosition posX="33" posY="202"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="32" posY="212"></gridObjPosition>
+					<gridObjPosition posX="32" posY="202"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".8" pinName="OUT">
+						<objPosition posX="17" posY="104"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".9" pinName="IN1">
+						<objPosition posX="21" posY="111"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="20" posY="104"></gridObjPosition>
+					<gridObjPosition posX="20" posY="111"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".14" pinName="OUT">
+						<objPosition posX="23" posY="201"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".16" pinName="IN1">
+						<objPosition posX="33" posY="201"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".6" pinName="OUT">
+						<objPosition posX="24" posY="85"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".7" pinName="IN2">
+						<objPosition posX="29" posY="79"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="28" posY="85"></gridObjPosition>
+					<gridObjPosition posX="28" posY="79"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".9" pinName="OUT">
+						<objPosition posX="27" posY="111"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".10" pinName="IN1">
+						<objPosition posX="29" posY="118"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="28" posY="118"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".11" pinName="OUT">
+						<objPosition posX="23" posY="136"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName="MCC2Entry" pinName="S">
+						<objPosition posX="32" posY="139"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="25" posY="136"></gridObjPosition>
+					<gridObjPosition posX="25" posY="139"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".12" pinName="OUT">
+						<objPosition posX="23" posY="144"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName="MCC2Entry" pinName="R1">
+						<objPosition posX="32" posY="140"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="31" posY="144"></gridObjPosition>
+					<gridObjPosition posX="31" posY="140"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".19" pinName="OUT">
+						<objPosition posX="86" posY="44"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName="MCC2Alm_Auto_Tmr" pinName="IN">
+						<objPosition posX="97" posY="44"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".13" pinName="OUT">
+						<objPosition posX="26" posY="171"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName="MCC2Exit" pinName="S">
+						<objPosition posX="33" posY="171"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".17" pinName="OUT">
+						<objPosition posX="86" posY="27"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName="MCC2ExitError" pinName="R1">
+						<objPosition posX="100" posY="20"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="88" posY="27"></gridObjPosition>
+					<gridObjPosition posX="88" posY="20"></gridObjPosition>
+				</linkFB>
+				<textBox width="49" height="3">Exit Timer<objPosition posX="1" posY="162"></objPosition>
+				</textBox>
+				<textBox width="49" height="2">Door Monitoring<objPosition posX="1" posY="23"></objPosition>
+				</textBox>
+				<textBox width="49" height="2">Dorrs Secured<objPosition posX="1" posY="69"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">Local Alarm<objPosition posX="60" posY="81"></objPosition>
+				</textBox>
+				<textBox width="49" height="2">Authorised Occupier/Alarm Disable Monitoring<objPosition posX="1" posY="45"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">Exit Failure<objPosition posX="1" posY="190"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">Entry Timer<objPosition posX="1" posY="127"></objPosition>
+				</textBox>
+				<textBox width="49" height="15">==========================================================================================
+Program:  AccessDetection
+Author:   Ji Wang (Cromarty)
+Date:      19 October 2023
+
+Description:
+This program monitors the access doors and occupied keyswitch, alerts personnel with a warning lamp/buzzer,
+and sends intruder alarm and occupied status back to SCADA.
+
+Revision History:
+Version 01,  19 October 2023
+==========================================================================================<objPosition posX="1" posY="1"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">================================================Finish=============================================================<objPosition posX="60" posY="97"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">Entry Timer - Starts when doors are opened, reset if alarms disabled via switch. Error if timer has elasped (i.e. switch was not set to 'disabled'
+ in time).<objPosition posX="1" posY="123"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">Exit Timer - Starts when alarm switch re-enabled, reset if alarm re-disabled via switch<objPosition posX="1" posY="92"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">Map intruder alarm to SCADA - can be due to entry error (alarms not disabled in time), exit failure (doors not closed in time) or exit error 
+(doors closed with alarms still disabled - after 30sec delay)<objPosition posX="60" posY="55"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">Exit Timer - Starts when alarm switch re-enabled, reset if alarm re-disabled via switch<objPosition posX="1" posY="158"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">Exit Error<objPosition posX="60" posY="5"></objPosition>
+				</textBox>
+				<textBox width="49" height="2">Exit Timer<objPosition posX="1" posY="96"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">SCADA Alarm<objPosition posX="60" posY="59"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">Exit Error - Doors Closed without first Enabling Alarms. Second timer to auto re-enabe all alarms after 15min if this state is not rectified.<objPosition posX="60" posY="1"></objPosition>
+				</textBox>
+				<textBox width="49" height="2">Debounce Inputs and suppress alarms if door opened and switch set to disabled<objPosition posX="1" posY="17"></objPosition>
+				</textBox>
+				<textBox width="49" height="2">Detect Secured State - Doors closed, alarms enabled<objPosition posX="1" posY="66"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">Control local intruder buzzer/lamp - can be due to entry error (alarms not disabled in time), exit failure (doors not closed in time) or exit error 
+(doors closed with alarms still disabled)<objPosition posX="60" posY="77"></objPosition>
+				</textBox>
+				<textBox width="49" height="3">Detect and Latch Exit Failure - Switch turned to re-enable alarms but doors not closed in time. To Un-latch requires alarms to be re-disabled.<objPosition posX="1" posY="186"></objPosition>
+				</textBox>
+			</networkFBD>
+		</FBDSource>
+	</program>
+	<dataBlock>
+		<variables name="bMCC2ExitDone" typeName="BOOL"></variables>
+		<variables name="bMCC2ExitFailLatch" typeName="BOOL"></variables>
+		<variables name="bMCC2Secure" typeName="BOOL"></variables>
+		<variables name="bMCC2ExitErrorDone" typeName="BOOL"></variables>
+		<variables name="bMCC2Exit" typeName="BOOL"></variables>
+		<variables name="obMCC2IntrAlm" typeName="BOOL"></variables>
+		<variables name="bMCC2IntruderLatch" typeName="BOOL"></variables>
+		<variables name="ibMCC2AuthorisedOccupier" typeName="EBOOL"></variables>
+		<variables name="EIO2_d1_r0_s2_DDI3202K" typeName="T_U_DIS_STD_IN_32">
+			<attribute name="ManagedKey" value="181E147A-2AE4-4EB8-91AD-773DC7485F4F"></attribute>
+			<attribute name="Owner" value="\2.1\0.2"></attribute>
+			<instanceElementDesc name="DIS_CH_IN">
+				<instanceElementDesc name="[0]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2PhaseFailRelayOk"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[1]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2SurgeDiverterOk"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[2]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2DoorsClosed"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[3]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2AuthorisedOccupier"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[4]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2SmokeDetector"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[5]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2MaintenanceSwitch"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[6]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[7]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[8]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[9]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[10]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[11]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[12]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[13]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[14]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[15]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[16]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2PS1Fault"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[17]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS1Fault"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[18]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS1Ready"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[19]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS1BatteryMode"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[20]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2PS2Fault"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[21]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS2Fault"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[22]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS2Ready"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[23]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS2BatteryMode"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[24]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[25]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP9P10BackupLevelControllerOk"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[26]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP11P12BackupLevelControllerOk"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[27]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[28]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[29]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[30]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP9to12SimStartInhibitControlOk"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[31]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP9to12SimStartInhibitActive"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+			</instanceElementDesc>
+		</variables>
+		<variables name="ibMCC2PhaseFailRelayOk" typeName="EBOOL"></variables>
+		<variables name="ibMCC2SurgeDiverterOk" typeName="EBOOL"></variables>
+		<variables name="ibMCC2DoorsClosed" typeName="EBOOL"></variables>
+		<variables name="ibMCC2SmokeDetector" typeName="EBOOL"></variables>
+		<variables name="ibMCC2MaintenanceSwitch" typeName="EBOOL"></variables>
+		<variables name="ibMCC2PS1Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS1Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS1Ready" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS1BatteryMode" typeName="EBOOL"></variables>
+		<variables name="ibMCC2PS2Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS2Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS2Ready" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS2BatteryMode" typeName="EBOOL"></variables>
+		<variables name="ibP9P10BackupLevelControllerOk" typeName="EBOOL"></variables>
+		<variables name="ibP11P12BackupLevelControllerOk" typeName="EBOOL"></variables>
+		<variables name="ibP9to12SimStartInhibitControlOk" typeName="EBOOL"></variables>
+		<variables name="ibP9to12SimStartInhibitActive" typeName="EBOOL"></variables>
+		<variables name="MCC2ExitError" typeName="RS"></variables>
+		<variables name="bMCC2TxAlarmsDisabled" typeName="BOOL"></variables>
+		<variables name="MCC2Exit" typeName="RS"></variables>
+		<variables name="bMCC2EntryError" typeName="BOOL"></variables>
+		<variables name="MCC2Exit_Tmr" typeName="TON">
+			<comment>Exit Timer</comment>
+		</variables>
+		<variables name="bMCC2ScadaAlarmsEnabled" typeName="BOOL"></variables>
+		<variables name="bMCC2TxIntruderAlm" typeName="BOOL"></variables>
+		<variables name="MCC2Exit_Err_Tmr" typeName="TON">
+			<comment>Exit Error Timer</comment>
+		</variables>
+		<variables name="bMCC2DoorClosed" typeName="BOOL"></variables>
+		<variables name="MCC2Alm_Auto_Tmr" typeName="TON">
+			<comment>Alarm Re-Enable Timer</comment>
+		</variables>
+		<variables name="bMCC2DoorOpen" typeName="BOOL"></variables>
+		<variables name="bMCC2Entry" typeName="BOOL"></variables>
+		<variables name="MCC2Entry" typeName="RS"></variables>
+		<variables name="bMCC2ExitError" typeName="BOOL"></variables>
+		<variables name="MCC2Door_Tmr" typeName="TON">
+			<comment>Door Debounce Timer</comment>
+		</variables>
+		<variables name="bMCC2SecureLatch" typeName="BOOL"></variables>
+		<variables name="MCC2Entry_Tmr" typeName="TON">
+			<comment>Entry Timer</comment>
+		</variables>
+		<variables name="bMCC2ExitErrorAlmEn" typeName="BOOL"></variables>
+	</dataBlock>
+</FBDExchangeFile>

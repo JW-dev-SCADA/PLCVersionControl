@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBDExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V15.0-SP1 - 210706C" dateTime="date_and_time#2023-10-24-14:25:15" content="Derived Function Block source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.1" dateTime="date_and_time#2023-10-24-14:19:54"></contentHeader>
+	<program>
+		<identProgram name="PowerMonitorMCC1" type="section" task="MAST" SectionOrder="5"></identProgram>
+		<FBDSource nbRows="24" nbColumns="36">
+			<networkFBD>
+				<FFBBlock instanceName=".1" typeName="MOVE" additionnalPinNumber="0" enEnO="false" width="7" height="5">
+					<objPosition posX="23" posY="28"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="ibMCC1PhaseFailRelayOk"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bMCC1TxMainsStatus"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC1Fail_On" typeName="TON" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="23" posY="36"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN" effectiveParameter="bMCC1TxMainsStatus"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="PT" effectiveParameter="tMCC1RxMainsFailDelay"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="ET"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC1Mains_Fail" typeName="RS" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="42" posY="36"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="S"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="R1" effectiveParameter="bMCC1TxMainsStatus"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q1" effectiveParameter="bMCC1TxMainsFailed"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC1Reset_ONS" typeName="R_TRIG" additionnalPinNumber="0" enEnO="false" width="7" height="5">
+					<objPosition posX="23" posY="57"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="CLK" effectiveParameter="bMCC1TxMainsStatus"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC1Reset_Dly_Off" typeName="TON" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="23" posY="67"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="bMCC1MainsFailReset"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="PT" effectiveParameter="t#67s"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="ET"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC1Mains_Reset" typeName="RS" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="47" posY="57"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="S"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="R1"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q1" effectiveParameter="bMCC1MainsFailReset"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".2" typeName="NOT" additionnalPinNumber="0" enEnO="false" width="7" height="5">
+					<objPosition posX="22" posY="85"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="ibMCC1SurgeDiverterOk"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bMCC1TxMainsSurgeTrip"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName="MCC1DC_Monitor" typeName="fbTWStdPowerSupply" additionnalPinNumber="0" enEnO="false" width="19" height="13">
+					<objPosition posX="25" posY="110"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="ibMainsFault" effectiveParameter="bMCC1TxMainsStatus"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="ibSPDFaultFbk" effectiveParameter="FALSE"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="ibPS1FaultFbk" effectiveParameter="ibMCC1PS1Fault"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="ibPS1BatFaultFbk" effectiveParameter="ibMCC1UPS1Fault"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="ibPS2FaultFbk" effectiveParameter="ibMCC1PS2Fault"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="ibPS2BatFaultFbk" effectiveParameter="ibMCC1UPS2Fault"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="ibDeriveMainsFault" effectiveParameter="FALSE"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="ibSPDFaultInst" effectiveParameter="FALSE"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="ibPS2Inst" effectiveParameter="TRUE"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="obDerivedMainsFault"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="obSPDFault"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="obPS1Fault"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="obPS1BatFault"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="obPS2Fault"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="obPS2BatFault"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".3" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="28" posY="125"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibMCC1PS1Fault"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibMCC1PS2Fault"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".4" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="28" posY="132"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<linkFB>
+					<linkSource parentObjectName="MCC1Reset_Dly_Off" pinName="Q">
+						<objPosition posX="29" posY="71"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName="MCC1Mains_Reset" pinName="R1">
+						<objPosition posX="47" posY="62"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="31" posY="71"></gridObjPosition>
+					<gridObjPosition posX="31" posY="62"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName="MCC1Fail_On" pinName="Q">
+						<objPosition posX="29" posY="40"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName="MCC1Mains_Fail" pinName="S">
+						<objPosition posX="42" posY="40"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName="MCC1Reset_ONS" pinName="Q">
+						<objPosition posX="29" posY="61"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName="MCC1Mains_Reset" pinName="S">
+						<objPosition posX="47" posY="61"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<textBox width="74" height="3">Mains Resumption Reset<objPosition posX="6" posY="48"></objPosition>
+				</textBox>
+				<textBox width="74" height="3">Mains Monitor<objPosition posX="6" posY="22"></objPosition>
+				</textBox>
+				<textBox width="74" height="3">Mains Supply
+Report status to SCADA. Monitor for failure (after SCADA SP delay timer elapses). Generate reset pulse once mains become healthy again.<objPosition posX="6" posY="18"></objPosition>
+				</textBox>
+				<textBox width="74" height="3">Mains Surge Monitor<objPosition posX="6" posY="79"></objPosition>
+				</textBox>
+				<textBox width="74" height="5">DC Supply and Batteries
+Report status to SCADA. Monitor for failures.<objPosition posX="6" posY="94"></objPosition>
+				</textBox>
+				<textBox width="74" height="3">DC Supply Monitoring<objPosition posX="6" posY="101"></objPosition>
+				</textBox>
+				<textBox width="74" height="15">==========================================================================================
+Program:  MCC 1 PowerMonitor
+Author:    Ji Wang (Cromarty)
+Date:      19 October 2023
+
+Description:
+This program monitors site mains power and local power supplies.
+Based on TDESTD25 Version 3 Kingfisher CP35 code.
+
+Revision History:
+Version 01, 19 October 2023
+Version 02, 24 October 2023 - Thomas de Ruyter (Cromarty)
+==========================================================================================<objPosition posX="6" posY="1"></objPosition>
+				</textBox>
+			</networkFBD>
+		</FBDSource>
+	</program>
+	<dataBlock>
+		<variables name="MCC1Fail_On" typeName="TON"></variables>
+		<variables name="bMCC1TxMainsSurgeTrip" typeName="BOOL"></variables>
+		<variables name="ibMCC1SurgeDiverterOk" typeName="EBOOL"></variables>
+		<variables name="PLC0_d0_r0_s5_DDI3202K" typeName="T_U_DIS_STD_IN_32">
+			<attribute name="ManagedKey" value="F9374F74-F1B8-43C0-BA4C-CBB782814E48"></attribute>
+			<attribute name="Owner" value="\0.0\0.5"></attribute>
+			<instanceElementDesc name="DIS_CH_IN">
+				<instanceElementDesc name="[0]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMSBPhaseFailRelayOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[1]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMSBSurgeDiverterOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[2]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMainCBClosed"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[3]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibGenCBClosed"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[4]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibATSReady"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[5]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibGenAvailable"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[6]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibGenOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[7]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibGenRunning"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[8]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibGenFuelLevelLow"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[9]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibActiveFilterOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[10]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1PhaseFailRelayOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[11]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1SurgeDiverterOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[12]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1DoorsClosed"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[13]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1AuthorisedOccupier"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[14]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1SmokeDetector"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[15]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibGenLoadBankFault"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[16]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1PS1Fault"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[17]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1UPS1Fault"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[18]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1UPS1Ready"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[19]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1UPS1BatteryMode"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[20]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1PS2Fault"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[21]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1UPS2Fault"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[22]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1UPS2Ready"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[23]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC1UPS2BatteryMode"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[24]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibInletBackupLevelControllerOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[25]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP1P6BackupLevelControllerOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[26]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP2P5BackupLevelControllerOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[27]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP3P4BackupLevelControllerOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[28]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP7P8BackupLevelControllerOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[30]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP1to8InhibitControlOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[31]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP1to8InhibitControlActive"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+			</instanceElementDesc>
+		</variables>
+		<variables name="ibMSBPhaseFailRelayOk" typeName="EBOOL"></variables>
+		<variables name="ibMSBSurgeDiverterOk" typeName="EBOOL"></variables>
+		<variables name="ibMainCBClosed" typeName="EBOOL"></variables>
+		<variables name="ibGenCBClosed" typeName="EBOOL"></variables>
+		<variables name="ibATSReady" typeName="EBOOL"></variables>
+		<variables name="ibGenAvailable" typeName="EBOOL"></variables>
+		<variables name="ibGenOk" typeName="EBOOL"></variables>
+		<variables name="ibGenRunning" typeName="EBOOL"></variables>
+		<variables name="ibGenFuelLevelLow" typeName="EBOOL"></variables>
+		<variables name="ibActiveFilterOk" typeName="EBOOL"></variables>
+		<variables name="ibMCC1PhaseFailRelayOk" typeName="EBOOL"></variables>
+		<variables name="ibMCC1DoorsClosed" typeName="EBOOL"></variables>
+		<variables name="ibMCC1AuthorisedOccupier" typeName="EBOOL"></variables>
+		<variables name="ibMCC1SmokeDetector" typeName="EBOOL"></variables>
+		<variables name="ibGenLoadBankFault" typeName="EBOOL"></variables>
+		<variables name="ibMCC1PS1Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC1UPS1Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC1UPS1Ready" typeName="EBOOL"></variables>
+		<variables name="ibMCC1UPS1BatteryMode" typeName="EBOOL"></variables>
+		<variables name="ibMCC1PS2Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC1UPS2Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC1UPS2Ready" typeName="EBOOL"></variables>
+		<variables name="ibMCC1UPS2BatteryMode" typeName="EBOOL"></variables>
+		<variables name="ibInletBackupLevelControllerOk" typeName="EBOOL"></variables>
+		<variables name="ibP1P6BackupLevelControllerOk" typeName="EBOOL"></variables>
+		<variables name="ibP2P5BackupLevelControllerOk" typeName="EBOOL"></variables>
+		<variables name="ibP3P4BackupLevelControllerOk" typeName="EBOOL"></variables>
+		<variables name="ibP7P8BackupLevelControllerOk" typeName="EBOOL"></variables>
+		<variables name="ibP1to8InhibitControlOk" typeName="EBOOL"></variables>
+		<variables name="ibP1to8InhibitControlActive" typeName="EBOOL"></variables>
+		<variables name="MCC1Reset_ONS" typeName="R_TRIG"></variables>
+		<variables name="tMCC1RxMainsFailDelay" typeName="TIME"></variables>
+		<variables name="MCC1DC_Monitor" typeName="fbTWStdPowerSupply"></variables>
+		<variables name="MCC1Mains_Reset" typeName="RS"></variables>
+		<variables name="bMCC1MainsFailReset" typeName="BOOL"></variables>
+		<variables name="MCC1Reset_Dly_Off" typeName="TON"></variables>
+		<variables name="MCC1Mains_Fail" typeName="RS"></variables>
+		<variables name="bMCC1TxMainsStatus" typeName="BOOL"></variables>
+		<variables name="bMCC1TxMainsFailed" typeName="BOOL"></variables>
+	</dataBlock>
+	<FBSource nameOfFBType="fbTWStdPowerSupply" version="0.12" dateTime="dt#2021-07-22-16:07:16">
+		<attribute name="TypeCodeCheckSumString" value="CFFF"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="C29C"></attribute>
+		<attribute name="UseNewTplSignAlgo" value="TRUE"></attribute>
+		<inputParameters>
+			<variables name="ibMainsFault" typeName="EBOOL">
+				<comment>Mains Power Fault (0=Normal, 1=Fault)</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="ibSPDFaultFbk" typeName="EBOOL">
+				<comment>[Physical Input] Surge Protection Device Fault (0=Fault, 1=Normal)</comment>
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="ibPS1FaultFbk" typeName="EBOOL">
+				<comment>[Physical Input] Power Supply 1 Fault (0=Fault, 1=Normal)</comment>
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="ibPS1BatFaultFbk" typeName="EBOOL">
+				<comment>[Physical Input] Power Supply 1 Battery Fault (0=Fault, 1=Normal)</comment>
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="ibPS2FaultFbk" typeName="EBOOL">
+				<comment>[Physical Input] Power Supply 2 Fault (0=Fault, 1=Normal)</comment>
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+			<variables name="ibPS2BatFaultFbk" typeName="EBOOL">
+				<comment>[Physical Input] Power Supply 2 Battery Fault (0=Fault, 1=Normal)</comment>
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+			<variables name="ibDeriveMainsFault" typeName="EBOOL">
+				<comment>Derive Mains Power Fault from Power Supply Fault (0=Disabled, 1=Enabled)</comment>
+				<attribute name="PositionPin" value="7"></attribute>
+			</variables>
+			<variables name="ibSPDFaultInst" typeName="EBOOL">
+				<comment>Surge Protection Device Fault Installed (0=Not Installed, 1=Installed)</comment>
+				<attribute name="PositionPin" value="8"></attribute>
+			</variables>
+			<variables name="ibPS2Inst" typeName="EBOOL">
+				<comment>Power Supply 2 Installed (0=Not Installed, 1=Installed)</comment>
+				<attribute name="PositionPin" value="9"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="obDerivedMainsFault" typeName="EBOOL">
+				<comment>Derived Mains Power Fault (0=Normal, 1=Alarm)</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="obSPDFault" typeName="EBOOL">
+				<comment>[SCADATag - BI] “SPD Fault” (0=Normal, 1=Alarm)</comment>
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="obPS1Fault" typeName="EBOOL">
+				<comment>[SCADATag - BI] “Power Supply 1 Fault” (0=Normal, 1=Alarm)</comment>
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="obPS1BatFault" typeName="EBOOL">
+				<comment>[SCADATag - BI] “Battery 1 Fault” (0=Normal, 1=Alarm)</comment>
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="obPS2Fault" typeName="EBOOL">
+				<comment>[SCADATag - BI] “Power Supply 2 Fault” (0=Normal, 1=Alarm)</comment>
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+			<variables name="obPS2BatFault" typeName="EBOOL">
+				<comment>[SCADATag - BI] “Battery 2 Fault” (0=Normal, 1=Alarm)</comment>
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+		</outputParameters>
+		<privateLocalVariables>
+			<variables name="bDerivedMainsFault" typeName="EBOOL">
+				<comment>Derived Mains Power Fault (0=Normal, 1=Fault)</comment>
+			</variables>
+		</privateLocalVariables>
+		<FBProgram name="Code">
+			<FBDSource nbRows="24" nbColumns="36">
+				<networkFBD>
+					<FFBBlock instanceName=".3" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="15" posY="22"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="ibPS1FaultFbk"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="ibPS2Inst"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".4" typeName="AND" additionnalPinNumber="1" enEnO="false" width="7" height="7">
+						<objPosition posX="15" posY="29"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="ibPS1FaultFbk"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibPS2Inst"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN3" effectiveParameter="ibPS2FaultFbk"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".5" typeName="MOVE" additionnalPinNumber="0" enEnO="false" width="7" height="5">
+						<objPosition posX="53" posY="29"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="bDerivedMainsFault"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obDerivedMainsFault"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".6" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="34" posY="22"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".7" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="53" posY="21"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibDeriveMainsFault"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bDerivedMainsFault"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".8" typeName="AND" additionnalPinNumber="1" enEnO="false" width="7" height="7">
+						<objPosition posX="15" posY="41"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="ibPS1FaultFbk"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="ibMainsFault"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN3" effectiveParameter="bDerivedMainsFault"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obPS1Fault"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".10" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="15" posY="66"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibSPDFaultInst"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="ibSPDFaultFbk"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obSPDFault"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".9" typeName="AND" additionnalPinNumber="2" enEnO="false" width="7" height="8">
+						<objPosition posX="53" posY="41"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="ibPS2FaultFbk"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="ibMainsFault"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN3" effectiveParameter="bDerivedMainsFault"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN4" effectiveParameter="ibPS2Inst"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obPS2Fault"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".11" typeName="NOT" additionnalPinNumber="0" enEnO="false" width="7" height="5">
+						<objPosition posX="15" posY="54"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="ibPS1BatFaultFbk"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obPS1BatFault"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".12" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="53" posY="54"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="ibPS2BatFaultFbk"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibPS2Inst"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obPS2BatFault"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<linkFB>
+						<linkSource parentObjectName=".3" pinName="OUT">
+							<objPosition posX="21" posY="26"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".6" pinName="IN1">
+							<objPosition posX="34" posY="26"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".6" pinName="OUT">
+							<objPosition posX="40" posY="26"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".7" pinName="IN2">
+							<objPosition posX="53" posY="26"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".4" pinName="OUT">
+							<objPosition posX="21" posY="33"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".6" pinName="IN2">
+							<objPosition posX="34" posY="27"></objPosition>
+						</linkDestination>
+						<gridObjPosition posX="28" posY="33"></gridObjPosition>
+						<gridObjPosition posX="28" posY="27"></gridObjPosition>
+					</linkFB>
+					<textBox width="35" height="9">Power Supply 1 Battery Fault
+    <objPosition posX="2" posY="52"></objPosition>
+					</textBox>
+					<textBox width="72" height="16">Function Block:	fbTWStdPowerSupply
+
+Description:		This function block monitors the power supply status and generates alarms to be sent to SCADA. 
+			This block can also be configured to derive a Main Power Fault status from the power supply faults.
+
+Author:		Stuart Paul (Cromarty)
+
+Revision:		1.2
+Date:		2021-07-22
+
+Revision History:	1.0 	Original Issue (2021-05-21)
+			1.1	Updated comments (2021-05-28)
+    			1.2	Updated data types (2021-07-22)<objPosition posX="2" posY="2"></objPosition>
+					</textBox>
+					<textBox width="35" height="11">Power Supply 1 Fault
+    <objPosition posX="2" posY="39"></objPosition>
+					</textBox>
+					<textBox width="72" height="17">Mains Power Fault
+    <objPosition posX="2" posY="20"></objPosition>
+					</textBox>
+					<textBox width="35" height="10">Surge Protection Device Fault
+    <objPosition posX="2" posY="63"></objPosition>
+					</textBox>
+					<textBox width="35" height="11">Power Supply 2 Fault
+    <objPosition posX="39" posY="39"></objPosition>
+					</textBox>
+					<textBox width="35" height="9">Power Supply 2 Battery Fault
+    <objPosition posX="39" posY="52"></objPosition>
+					</textBox>
+				</networkFBD>
+			</FBDSource>
+		</FBProgram>
+	</FBSource>
+</FBDExchangeFile>
