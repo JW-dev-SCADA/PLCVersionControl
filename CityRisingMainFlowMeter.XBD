@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBDExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V15.0-SP1 - 210706C" dateTime="date_and_time#2023-10-26-16:25:40" content="Derived Function Block source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.4" dateTime="date_and_time#2023-10-26-16:30:59"></contentHeader>
+	<program>
+		<identProgram name="CityRisingMainFlowMeter" type="section" task="MAST" SectionOrder="7"></identProgram>
+		<FBDSource nbRows="24" nbColumns="36">
+			<networkFBD>
+				<FFBBlock instanceName="Flow_Pls_ONS" typeName="R_TRIG" additionnalPinNumber="0" enEnO="false" width="7" height="5">
+					<objPosition posX="14" posY="27"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="CLK"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="Q"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".1" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="26" posY="27"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".2" typeName="BOOL_TO_REAL" additionnalPinNumber="0" enEnO="false" width="10" height="5">
+					<objPosition posX="37" posY="27"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".3" typeName="ADD" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="28"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<linkFB>
+					<linkSource parentObjectName=".2" pinName="OUT">
+						<objPosition posX="46" posY="31"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".3" pinName="IN1">
+						<objPosition posX="50" posY="32"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="49" posY="31"></gridObjPosition>
+					<gridObjPosition posX="49" posY="32"></gridObjPosition>
+				</linkFB>
+				<textBox width="60" height="5">Scale Flow Transmitter and Generate Loop Fault.
+Analog input is scaled, limited and dampened (1 second update). AI card to be set to 0-20mA by removing jumper on rear of card.<objPosition posX="10" posY="37"></objPosition>
+				</textBox>
+				<textBox width="60" height="2">Flow Totaliser<objPosition posX="10" posY="18"></objPosition>
+				</textBox>
+				<textBox width="60" height="2">Flow Process Value<objPosition posX="10" posY="44"></objPosition>
+				</textBox>
+				<textBox width="60" height="13">==========================================================================================
+Program:  Option_FlowMeter
+Author:    Ji Wang(Cromarty)
+Date:       26 October 2023
+
+Description:
+This program monitors the optional outflow meter
+
+Revision History:
+Version 01, 26 October 2023
+==========================================================================================<objPosition posX="10" posY="3"></objPosition>
+				</textBox>
+				<textBox width="60" height="2">Totaliser<objPosition posX="10" posY="22"></objPosition>
+				</textBox>
+			</networkFBD>
+		</FBDSource>
+	</program>
+	<dataBlock>
+		<variables name="Flow_Pls_ONS" typeName="R_TRIG"></variables>
+	</dataBlock>
+</FBDExchangeFile>

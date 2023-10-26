@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBDExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V15.0-SP1 - 210706C" dateTime="date_and_time#2023-10-26-16:25:44" content="Derived Function Block source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.4" dateTime="date_and_time#2023-10-26-16:30:59"></contentHeader>
+	<program>
+		<identProgram name="WestRisingMainFlowMeter" type="section" task="MAST" SectionOrder="8"></identProgram>
+		<FBDSource nbRows="24" nbColumns="36">
+			<networkFBD></networkFBD>
+		</FBDSource>
+	</program>
+</FBDExchangeFile>
