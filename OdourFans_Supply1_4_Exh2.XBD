@@ -1,0 +1,1778 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBDExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V15.0-SP1 - 210706C" dateTime="date_and_time#2023-11-1-9:44:22" content="Derived Function Block source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.1" dateTime="date_and_time#2023-10-24-14:19:54"></contentHeader>
+	<program>
+		<identProgram name="OdourFans_Supply1_4_Exh2" type="section" task="MAST" SectionOrder="7"></identProgram>
+		<FBDSource nbRows="24" nbColumns="9">
+			<networkFBD>
+				<FFBBlock instanceName=".1" typeName="OR" additionnalPinNumber="1" enEnO="false" width="7" height="7">
+					<objPosition posX="20" posY="24"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN1" effectiveParameter="ibSupplyAirFan1Available"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="ibSupplyAirFan4Available"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN3" effectiveParameter="ibExhaustFan2Available"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bOdourFanInterlock1"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".5" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="40"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibSupplyAirFan1Auto"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="bOdourFanInterlock1"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".6" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="40"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibSupplyAirFan1ROCPAuto"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyFan1Auto"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".7" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="47"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibSupplyAirFan1ROCPManualLow"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyFan1ManualLow"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".8" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="54"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibSupplyAirFan1ROCPManualHigh"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyFan1ManualHigh"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".9" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="61"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibSupplyAirFan4Auto"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="bOdourFanInterlock1"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".10" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="61"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibSupplyAirFan4ROCPAuto"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyFan4Auto"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".11" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="68"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibSupplyAirFan4ROCPManualLow"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyFan4ManualLow"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".12" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="75"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibSupplyAirFan4ROCPManualHigh"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyFan4ManualHigh"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".13" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="82"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibExhaustFan2Auto"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="bOdourFanInterlock1"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".14" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="82"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibExhaustFan2ROCPAuto"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bExhaustFan2Auto"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".15" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="89"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibExhaustFan2ROCPManualLow"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bExhaustFan2ManualLow"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".16" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="96"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibExhaustFan2ROCPManualHigh"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bExhaustFan2ManualHigh"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".17" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="111"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bSupplyFan1Auto"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibMCC2AuthorisedOccupier"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyAirFan1RunHighAutoReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".18" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="111"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bSupplyFan1Auto"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="ibMCC2AuthorisedOccupier"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyAirFan1RunLowAutoReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".19" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="118"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bSupplyFan4Auto"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibMCC2AuthorisedOccupier"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyAirFan4RunHighAutoReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".20" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="125"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bExhaustFan2Auto"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="ibMCC2AuthorisedOccupier"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bExhaustFan2RunHighAutoReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".22" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="118"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bSupplyFan4Auto"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="ibMCC2AuthorisedOccupier"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyAirFan4RunLowAutoReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".23" typeName="AND" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="50" posY="125"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bExhaustFan2Auto"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN2" effectiveParameter="ibMCC2AuthorisedOccupier"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bExhaustFan2RunLowAutoReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".25" typeName="AND" additionnalPinNumber="1" enEnO="false" width="7" height="7">
+					<objPosition posX="43" posY="141"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyFan1ManualLow"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN3" effectiveParameter="ibSupplyAirFan1ROCPManualStop"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyAirFan1RunLowManReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".24" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="141"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibSupplyAirFan1ROCPManualStart"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyAirFan1RunLowManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".26" typeName="AND" additionnalPinNumber="1" enEnO="false" width="7" height="7">
+					<objPosition posX="43" posY="149"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyFan4ManualLow"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN3" effectiveParameter="ibSupplyAirFan4ROCPManualStop"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyAirFan4RunLowManReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".29" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="149"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibSupplyAirFan4ROCPManualStart"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyAirFan4RunLowManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".31" typeName="AND" additionnalPinNumber="1" enEnO="false" width="7" height="7">
+					<objPosition posX="43" posY="157"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bExhaustFan2ManualLow"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN3" effectiveParameter="ibExhaustFan2ROCPManualStop"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bExhaustFan2RunLowManReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".30" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="157"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibExhaustFan2ROCPManualStart"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bExhaustFan2RunLowManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".21" typeName="AND" additionnalPinNumber="1" enEnO="false" width="7" height="7">
+					<objPosition posX="43" posY="171"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyFan1ManualHigh"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN3" effectiveParameter="ibSupplyAirFan1ROCPManualStop"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyAirFan1RunHighManReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".32" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="171"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibSupplyAirFan1ROCPManualStart"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyAirFan1RunHighManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".35" typeName="AND" additionnalPinNumber="1" enEnO="false" width="7" height="7">
+					<objPosition posX="43" posY="179"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyFan4ManualHigh"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN3" effectiveParameter="ibSupplyAirFan4ROCPManualStop"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bSupplyAirFan4RunHighManReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".36" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="179"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibSupplyAirFan4ROCPManualStart"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyAirFan4RunHighManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".38" typeName="AND" additionnalPinNumber="1" enEnO="false" width="7" height="7">
+					<objPosition posX="43" posY="187"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bExhaustFan2ManualHigh"></inputVariable>
+						<inputVariable invertedPin="true" formalParameter="IN3" effectiveParameter="ibExhaustFan2ROCPManualStop"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="bExhaustFan2RunHighManReq"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".39" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="187"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ibExhaustFan2ROCPManualStart"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bExhaustFan2RunHighManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".2" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="201"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bSupplyAirFan1RunHighAutoReq"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyAirFan1RunHighManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obSupplyAirFan1RunHighCmd"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".3" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="53" posY="201"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bSupplyAirFan1RunLowAutoReq"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyAirFan1RunLowManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obSupplyAirFan1RunLowCmd"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".4" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="208"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bSupplyAirFan4RunHighAutoReq"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyAirFan4RunHighManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obSupplyAirFan4RunHighCmd"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".27" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="53" posY="208"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bSupplyAirFan4RunLowAutoReq"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bSupplyAirFan4RunLowManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obSupplyAirFan4RunLowCmd"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".28" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="20" posY="215"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bExhaustFan2RunHighAutoReq"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bExhaustFan2RunHighManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obExhaustFan2RunHighCmd"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<FFBBlock instanceName=".33" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+					<objPosition posX="53" posY="215"></objPosition>
+					<descriptionFFB execAfter="">
+						<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="bExhaustFan2RunLowAutoReq"></inputVariable>
+						<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="bExhaustFan2RunLowManReq"></inputVariable>
+						<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+						<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="obExhaustFan2RunLowCmd"></outputVariable>
+					</descriptionFFB>
+				</FFBBlock>
+				<linkFB>
+					<linkSource parentObjectName=".13" pinName="OUT">
+						<objPosition posX="26" posY="86"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".15" pinName="IN1">
+						<objPosition posX="50" posY="93"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="30" posY="86"></gridObjPosition>
+					<gridObjPosition posX="30" posY="93"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".13" pinName="OUT">
+						<objPosition posX="26" posY="86"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".16" pinName="IN1">
+						<objPosition posX="50" posY="100"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="30" posY="86"></gridObjPosition>
+					<gridObjPosition posX="30" posY="100"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".13" pinName="OUT">
+						<objPosition posX="26" posY="86"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".14" pinName="IN1">
+						<objPosition posX="50" posY="86"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".36" pinName="OUT">
+						<objPosition posX="26" posY="183"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".35" pinName="IN1">
+						<objPosition posX="43" posY="183"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".9" pinName="OUT">
+						<objPosition posX="26" posY="65"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".10" pinName="IN1">
+						<objPosition posX="50" posY="65"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".9" pinName="OUT">
+						<objPosition posX="26" posY="65"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".11" pinName="IN1">
+						<objPosition posX="50" posY="72"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="30" posY="65"></gridObjPosition>
+					<gridObjPosition posX="30" posY="72"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".24" pinName="OUT">
+						<objPosition posX="26" posY="145"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".25" pinName="IN1">
+						<objPosition posX="43" posY="145"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".39" pinName="OUT">
+						<objPosition posX="26" posY="191"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".38" pinName="IN1">
+						<objPosition posX="43" posY="191"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".5" pinName="OUT">
+						<objPosition posX="26" posY="44"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".8" pinName="IN1">
+						<objPosition posX="50" posY="58"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="30" posY="44"></gridObjPosition>
+					<gridObjPosition posX="30" posY="58"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".30" pinName="OUT">
+						<objPosition posX="26" posY="161"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".31" pinName="IN1">
+						<objPosition posX="43" posY="161"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".32" pinName="OUT">
+						<objPosition posX="26" posY="175"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".21" pinName="IN1">
+						<objPosition posX="43" posY="175"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".5" pinName="OUT">
+						<objPosition posX="26" posY="44"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".6" pinName="IN1">
+						<objPosition posX="50" posY="44"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".5" pinName="OUT">
+						<objPosition posX="26" posY="44"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".7" pinName="IN1">
+						<objPosition posX="50" posY="51"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="30" posY="44"></gridObjPosition>
+					<gridObjPosition posX="30" posY="51"></gridObjPosition>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".29" pinName="OUT">
+						<objPosition posX="26" posY="153"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".26" pinName="IN1">
+						<objPosition posX="43" posY="153"></objPosition>
+					</linkDestination>
+				</linkFB>
+				<linkFB>
+					<linkSource parentObjectName=".9" pinName="OUT">
+						<objPosition posX="26" posY="65"></objPosition>
+					</linkSource>
+					<linkDestination parentObjectName=".12" pinName="IN1">
+						<objPosition posX="50" posY="79"></objPosition>
+					</linkDestination>
+					<gridObjPosition posX="30" posY="65"></gridObjPosition>
+					<gridObjPosition posX="30" posY="79"></gridObjPosition>
+				</linkFB>
+				<textBox width="60" height="3">Man/Off/Auto Mode Selection<objPosition posX="10" posY="36"></objPosition>
+				</textBox>
+				<textBox width="60" height="3">Run Request Consolidation<objPosition posX="10" posY="197"></objPosition>
+				</textBox>
+				<textBox width="60" height="3">Interlock
+If any fan is unavailable, the associated fan group is prevented from running.<objPosition posX="10" posY="20"></objPosition>
+				</textBox>
+				<textBox width="60" height="3">ROCP Manual Low Mode Operation<objPosition posX="10" posY="137"></objPosition>
+				</textBox>
+				<textBox width="60" height="3">ROCP Manual High Mode Operation<objPosition posX="10" posY="167"></objPosition>
+				</textBox>
+				<textBox width="60" height="3">Automatic Mode Operation<objPosition posX="10" posY="107"></objPosition>
+				</textBox>
+				<textBox width="47" height="12">==========================================================================================
+Program:  Odour Fans (SAF 1&amp;4, EF 2)
+Author:    Thomas de Ruyter (Cromarty)
+Date:      30 October 2023
+
+Description:
+This program enables automatic and ROCP manual control of supply and exhaust odour fans.
+
+Revision History:
+Version 01, 30 October 2023
+==========================================================================================<objPosition posX="10" posY="3"></objPosition>
+				</textBox>
+			</networkFBD>
+		</FBDSource>
+	</program>
+	<dataBlock>
+		<variables name="ibSupplyAirFan4Available" typeName="EBOOL"></variables>
+		<variables name="PLC0_d0_r0_s9_DDI3202K" typeName="T_U_DIS_STD_IN_32">
+			<attribute name="ManagedKey" value="038C2B1C-2D91-4B10-A59C-F1BD9E965C82"></attribute>
+			<attribute name="Owner" value="\0.0\0.9"></attribute>
+			<instanceElementDesc name="DIS_CH_IN">
+				<instanceElementDesc name="[0]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP8SealLeakage"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[1]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP8Overtemp"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[3]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP8Running"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[4]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP8VSDOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[5]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP8Available"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[6]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP8Auto"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[7]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP8Reset"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[8]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP8LowLevelLockout"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[10]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan4Available"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[11]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan4Auto"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[12]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan4RunningHigh"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[13]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan4RunningLow"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[14]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan4Ok"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[16]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan1Available"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[17]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan1Auto"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[18]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan1Running"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[19]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan1Ok"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[21]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan2Available"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[22]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan2Auto"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[23]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan2RunningHigh"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[24]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan2RunningLow"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[25]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan2Ok"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[27]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibOMSPSSwitchroomFanAvailable"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[28]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibOMSPSSwitchroomFanAuto"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[29]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibOMSPSSwitchroomFanRunning"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[30]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibOMSPSSwitchroomFanOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+			</instanceElementDesc>
+		</variables>
+		<variables name="ibP8SealLeakage" typeName="EBOOL"></variables>
+		<variables name="ibP8Overtemp" typeName="EBOOL"></variables>
+		<variables name="ibP8Running" typeName="EBOOL"></variables>
+		<variables name="ibP8VSDOk" typeName="EBOOL"></variables>
+		<variables name="ibP8Available" typeName="EBOOL"></variables>
+		<variables name="ibP8Auto" typeName="EBOOL"></variables>
+		<variables name="ibP8Reset" typeName="EBOOL"></variables>
+		<variables name="ibP8LowLevelLockout" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan4Auto" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan4RunningHigh" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan4RunningLow" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan4Ok" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan1Available" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan1Auto" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan1Running" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan1Ok" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan2Available" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan2Auto" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan2RunningHigh" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan2RunningLow" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan2Ok" typeName="EBOOL"></variables>
+		<variables name="ibOMSPSSwitchroomFanAvailable" typeName="EBOOL"></variables>
+		<variables name="ibOMSPSSwitchroomFanAuto" typeName="EBOOL"></variables>
+		<variables name="ibOMSPSSwitchroomFanRunning" typeName="EBOOL"></variables>
+		<variables name="ibOMSPSSwitchroomFanOk" typeName="EBOOL"></variables>
+		<variables name="bExhaustFan2RunHighAutoReq" typeName="BOOL"></variables>
+		<variables name="bOdourFanInterlock1" typeName="BOOL"></variables>
+		<variables name="bExhaustFan2Auto" typeName="BOOL"></variables>
+		<variables name="obExhaustFan2RunLowCmd" typeName="EBOOL"></variables>
+		<variables name="PLC0_d0_r1_s1_DDO3202K" typeName="T_U_DIS_STD_OUT_32">
+			<attribute name="ManagedKey" value="DB132A86-0D36-44D0-A77A-09DE2C25F70B"></attribute>
+			<attribute name="Owner" value="\0.0\1.1"></attribute>
+			<instanceElementDesc name="DIS_CH_OUT">
+				<instanceElementDesc name="[0]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obSupplyAirFan1RunLowCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[1]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obSupplyAirFan1RunHighCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[2]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obSupplyAirFan2RunLowCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[3]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obSupplyAirFan2RunHighCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[4]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obSupplyAirFan3RunLowCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[5]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obSupplyAirFan3RunHighCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[6]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obSupplyAirFan4RunLowCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[7]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obSupplyAirFan4RunHighCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[8]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obExhaustFan1RunCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[9]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obExhaustFan2RunLowCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[10]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obExhaustFan2RunHighCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[11]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obOMSPSSwitchroomFanRunCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[12]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obNMSPSSwitchroomFanRunCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[31]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="obMCC1SecurityAlarmCmd"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+			</instanceElementDesc>
+		</variables>
+		<variables name="obSupplyAirFan1RunLowCmd" typeName="EBOOL"></variables>
+		<variables name="obSupplyAirFan1RunHighCmd" typeName="EBOOL"></variables>
+		<variables name="obSupplyAirFan2RunLowCmd" typeName="EBOOL"></variables>
+		<variables name="obSupplyAirFan2RunHighCmd" typeName="EBOOL"></variables>
+		<variables name="obSupplyAirFan3RunLowCmd" typeName="EBOOL"></variables>
+		<variables name="obSupplyAirFan3RunHighCmd" typeName="EBOOL"></variables>
+		<variables name="obSupplyAirFan4RunLowCmd" typeName="EBOOL"></variables>
+		<variables name="obSupplyAirFan4RunHighCmd" typeName="EBOOL"></variables>
+		<variables name="obExhaustFan1RunCmd" typeName="EBOOL"></variables>
+		<variables name="obExhaustFan2RunHighCmd" typeName="EBOOL"></variables>
+		<variables name="obOMSPSSwitchroomFanRunCmd" typeName="EBOOL"></variables>
+		<variables name="obNMSPSSwitchroomFanRunCmd" typeName="EBOOL"></variables>
+		<variables name="obMCC1SecurityAlarmCmd" typeName="EBOOL"></variables>
+		<variables name="bSupplyFan1ManualHigh" typeName="BOOL"></variables>
+		<variables name="ibSupplyAirFan4ROCPManualStart" typeName="EBOOL"></variables>
+		<variables name="EIO2_d2_r0_s4_DDI3202K" typeName="T_U_DIS_STD_IN_32">
+			<attribute name="ManagedKey" value="12FD5705-C9E0-4824-8441-95D710CEDFB6"></attribute>
+			<attribute name="Owner" value="\2.2\0.4"></attribute>
+			<instanceElementDesc name="DIS_CH_IN">
+				<instanceElementDesc name="[0]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibScreen1ROCPManualStart"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[1]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibScreen1ROCPManualStop"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[2]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[3]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[4]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibScreen2ROCPAuto"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[5]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibScreen2ROCPManual"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[6]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibScreen2ROCPManualStart"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[7]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibScreen2ROCPManualStop"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[8]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[9]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[10]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan1ROCPAuto"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[11]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan1ROCPManualLow"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[12]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan1ROCPManualHigh"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[13]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan1ROCPManualStart"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[14]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan1ROCPManualStop"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[15]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan2ROCPAuto"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[16]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan2ROCPManualLow"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[17]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan2ROCPManualHigh"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[18]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan2ROCPManualStart"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[19]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan2ROCPManualStop"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[20]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan3ROCPAuto"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[21]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan3ROCPManualLow"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[22]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan3ROCPManualHigh"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[23]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan3ROCPManualStart"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[24]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan3ROCPManualStop"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[25]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan4ROCPAuto"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[26]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan4ROCPManualLow"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[27]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan4ROCPManualHigh"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[28]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan4ROCPManualStart"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[29]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan4ROCPManualStop"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[30]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan1ROCPAuto"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[31]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan1ROCPManual"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+			</instanceElementDesc>
+		</variables>
+		<variables name="ibScreen1ROCPManualStart" typeName="EBOOL"></variables>
+		<variables name="ibScreen1ROCPManualStop" typeName="EBOOL"></variables>
+		<variables name="ibScreen2ROCPAuto" typeName="EBOOL"></variables>
+		<variables name="ibScreen2ROCPManual" typeName="EBOOL"></variables>
+		<variables name="ibScreen2ROCPManualStart" typeName="EBOOL"></variables>
+		<variables name="ibScreen2ROCPManualStop" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan1ROCPAuto" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan1ROCPManualLow" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan1ROCPManualHigh" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan1ROCPManualStart" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan1ROCPManualStop" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan2ROCPAuto" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan2ROCPManualLow" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan2ROCPManualHigh" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan2ROCPManualStart" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan2ROCPManualStop" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan3ROCPAuto" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan3ROCPManualLow" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan3ROCPManualHigh" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan3ROCPManualStart" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan3ROCPManualStop" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan4ROCPAuto" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan4ROCPManualLow" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan4ROCPManualHigh" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan4ROCPManualStop" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan1ROCPAuto" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan1ROCPManual" typeName="EBOOL"></variables>
+		<variables name="bSupplyFan1ManualLow" typeName="BOOL"></variables>
+		<variables name="ibMCC2AuthorisedOccupier" typeName="EBOOL"></variables>
+		<variables name="EIO2_d1_r0_s2_DDI3202K" typeName="T_U_DIS_STD_IN_32">
+			<attribute name="ManagedKey" value="181E147A-2AE4-4EB8-91AD-773DC7485F4F"></attribute>
+			<attribute name="Owner" value="\2.1\0.2"></attribute>
+			<instanceElementDesc name="DIS_CH_IN">
+				<instanceElementDesc name="[0]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2PhaseFailRelayOk"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[1]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2SurgeDiverterOk"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[2]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2DoorsClosed"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[3]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2AuthorisedOccupier"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[4]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2SmokeDetector"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[5]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2MaintenanceSwitch"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[6]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[7]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[8]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[9]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[10]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[11]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[12]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[13]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[14]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[15]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[16]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2PS1Fault"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[17]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS1Fault"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[18]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS1Ready"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[19]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS1BatteryMode"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[20]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2PS2Fault"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[21]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS2Fault"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[22]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS2Ready"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[23]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibMCC2UPS2BatteryMode"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[24]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[25]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP9P10BackupLevelControllerOk"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[26]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP11P12BackupLevelControllerOk"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[27]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[28]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[29]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[30]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP9to12SimStartInhibitControlOk"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[31]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP9to12SimStartInhibitActive"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+			</instanceElementDesc>
+		</variables>
+		<variables name="ibMCC2PhaseFailRelayOk" typeName="EBOOL"></variables>
+		<variables name="ibMCC2SurgeDiverterOk" typeName="EBOOL"></variables>
+		<variables name="ibMCC2DoorsClosed" typeName="EBOOL"></variables>
+		<variables name="ibMCC2SmokeDetector" typeName="EBOOL"></variables>
+		<variables name="ibMCC2MaintenanceSwitch" typeName="EBOOL"></variables>
+		<variables name="ibMCC2PS1Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS1Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS1Ready" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS1BatteryMode" typeName="EBOOL"></variables>
+		<variables name="ibMCC2PS2Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS2Fault" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS2Ready" typeName="EBOOL"></variables>
+		<variables name="ibMCC2UPS2BatteryMode" typeName="EBOOL"></variables>
+		<variables name="ibP9P10BackupLevelControllerOk" typeName="EBOOL"></variables>
+		<variables name="ibP11P12BackupLevelControllerOk" typeName="EBOOL"></variables>
+		<variables name="ibP9to12SimStartInhibitControlOk" typeName="EBOOL"></variables>
+		<variables name="ibP9to12SimStartInhibitActive" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan2ROCPManualHigh" typeName="EBOOL"></variables>
+		<variables name="EIO2_d2_r0_s5_DDI3202K" typeName="T_U_DIS_STD_IN_32">
+			<attribute name="ManagedKey" value="6BE5325A-FC77-42CB-8AFD-463E66CE74F9"></attribute>
+			<attribute name="Owner" value="\2.2\0.5"></attribute>
+			<instanceElementDesc name="DIS_CH_IN">
+				<instanceElementDesc name="[0]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan1ROCPManualStart"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[1]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan1ROCPManualStop"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[2]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan2ROCPAuto"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[3]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan2ROCPManualLow"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[4]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan2ROCPManualHigh"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[5]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan2ROCPManualStart"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[6]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibExhaustFan2ROCPManualStop"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[7]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibOMSPSSwitchroomFanROCPAuto"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[8]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibOMSPSSwitchroomFanROCPManual"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[9]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibOMSPSSwitchroomFanROCPManStart"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[10]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibOMSPSSwitchroomFanROCPManStop"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[11]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibNMSPSSwitchroomFanROCPAuto"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[12]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibNMSPSSwitchroomFanROCPManual"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[13]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibNMSPSSwitchroomFanROCPManStart"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[14]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibNMSPSSwitchroomFanROCPManStop"></attribute>
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[15]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[16]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[17]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[18]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[19]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[20]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[21]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[22]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[23]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[24]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[25]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[26]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[27]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[28]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[29]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[30]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[31]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="TimeStampCapability" value="0"></attribute>
+						<attribute name="TimeStampSource" value="2"></attribute>
+						<attribute name="TimeStampID" value="32767"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+			</instanceElementDesc>
+		</variables>
+		<variables name="ibExhaustFan1ROCPManualStart" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan1ROCPManualStop" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan2ROCPAuto" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan2ROCPManualLow" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan2ROCPManualStart" typeName="EBOOL"></variables>
+		<variables name="ibExhaustFan2ROCPManualStop" typeName="EBOOL"></variables>
+		<variables name="ibOMSPSSwitchroomFanROCPAuto" typeName="EBOOL"></variables>
+		<variables name="ibOMSPSSwitchroomFanROCPManual" typeName="EBOOL"></variables>
+		<variables name="ibOMSPSSwitchroomFanROCPManStart" typeName="EBOOL"></variables>
+		<variables name="ibOMSPSSwitchroomFanROCPManStop" typeName="EBOOL"></variables>
+		<variables name="ibNMSPSSwitchroomFanROCPAuto" typeName="EBOOL"></variables>
+		<variables name="ibNMSPSSwitchroomFanROCPManual" typeName="EBOOL"></variables>
+		<variables name="ibNMSPSSwitchroomFanROCPManStart" typeName="EBOOL"></variables>
+		<variables name="ibNMSPSSwitchroomFanROCPManStop" typeName="EBOOL"></variables>
+		<variables name="bSupplyFan4Auto" typeName="BOOL"></variables>
+		<variables name="bSupplyFan1Auto" typeName="BOOL"></variables>
+		<variables name="ibSupplyAirFan1Available" typeName="EBOOL"></variables>
+		<variables name="PLC0_d0_r0_s8_DDI3202K" typeName="T_U_DIS_STD_IN_32">
+			<attribute name="ManagedKey" value="408FEF6E-5B40-4F63-A1B2-1829C18EDC5D"></attribute>
+			<attribute name="Owner" value="\0.0\0.8"></attribute>
+			<instanceElementDesc name="DIS_CH_IN">
+				<instanceElementDesc name="[0]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP7SealLeakage"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[1]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP7Overtemp"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[3]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP7Running"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[4]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP7VSDOk"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[5]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP7Available"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[6]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP7Auto"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[7]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP7Reset"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[8]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibP7LowLevelLockout"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[10]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan1Available"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[11]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan1Auto"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[12]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan1RunningHigh"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[13]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan1RunningLow"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[14]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan1Ok"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[16]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan2Available"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[17]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan2Auto"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[18]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan2RunningHigh"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[19]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan2RunningLow"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[20]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan2Ok"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[22]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan3Available"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[23]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan3Auto"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[24]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan3RunningHigh"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[25]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan3RunningLow"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+				<instanceElementDesc name="[26]">
+					<instanceElementDesc name="VALUE">
+						<attribute name="Alias" value="ibSupplyAirFan3Ok"></attribute>
+					</instanceElementDesc>
+				</instanceElementDesc>
+			</instanceElementDesc>
+		</variables>
+		<variables name="ibP7SealLeakage" typeName="EBOOL"></variables>
+		<variables name="ibP7Overtemp" typeName="EBOOL"></variables>
+		<variables name="ibP7Running" typeName="EBOOL"></variables>
+		<variables name="ibP7VSDOk" typeName="EBOOL"></variables>
+		<variables name="ibP7Available" typeName="EBOOL"></variables>
+		<variables name="ibP7Auto" typeName="EBOOL"></variables>
+		<variables name="ibP7Reset" typeName="EBOOL"></variables>
+		<variables name="ibP7LowLevelLockout" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan1Auto" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan1RunningHigh" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan1RunningLow" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan1Ok" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan2Available" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan2Auto" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan2RunningHigh" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan2RunningLow" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan2Ok" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan3Available" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan3Auto" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan3RunningHigh" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan3RunningLow" typeName="EBOOL"></variables>
+		<variables name="ibSupplyAirFan3Ok" typeName="EBOOL"></variables>
+		<variables name="bSupplyAirFan4RunLowAutoReq" typeName="BOOL"></variables>
+		<variables name="bSupplyFan4ManualHigh" typeName="BOOL"></variables>
+		<variables name="bSupplyAirFan1RunLowAutoReq" typeName="BOOL"></variables>
+		<variables name="bExhaustFan2ManualLow" typeName="BOOL"></variables>
+		<variables name="bExhaustFan2RunLowManReq" typeName="BOOL"></variables>
+		<variables name="bSupplyFan4ManualLow" typeName="BOOL"></variables>
+		<variables name="bSupplyAirFan1RunLowManReq" typeName="BOOL"></variables>
+		<variables name="bSupplyAirFan4RunLowManReq" typeName="BOOL"></variables>
+		<variables name="bExhaustFan2RunHighManReq" typeName="BOOL"></variables>
+		<variables name="bExhaustFan2ManualHigh" typeName="BOOL"></variables>
+		<variables name="bExhaustFan2RunLowAutoReq" typeName="BOOL"></variables>
+		<variables name="bSupplyAirFan1RunHighAutoReq" typeName="BOOL"></variables>
+		<variables name="bSupplyAirFan4RunHighManReq" typeName="BOOL"></variables>
+		<variables name="bSupplyAirFan1RunHighManReq" typeName="BOOL"></variables>
+		<variables name="bSupplyAirFan4RunHighAutoReq" typeName="BOOL"></variables>
+	</dataBlock>
+</FBDExchangeFile>
